@@ -1,0 +1,82 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/Floor.proto"
+
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation 0.33173515647065155 -0.7254277285732188 -0.6030807546079486 5.287774575198818
+  position -1.0331584278258794 -1.0064156590274926 1.1525437451187122
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 1 1
+}
+WoodenBox {
+  translation -0.445238 -0.443324 0.05
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation 0.244762 -0.273324 0.05
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation -0.305238 0.136676 0.05
+  name "wooden box(2)"
+  size 0.1 0.1 0.1
+}
+E-puck {
+  translation -0.17299503112422726 -0.27340916116160097 -3.194173298325803e-05
+  rotation -0.0010033549556623933 -0.000515566112782865 0.9999993637350059 -2.192274894004683
+  controller "epuck_go_forward"
+}
+Solid {
+  translation 0.2 0 0.2
+  children [
+    DEF OBJ_SHAPE Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry DEF BALL_GEOMETRY Sphere {
+        radius 0.05
+        subdivision 2
+      }
+    }
+  ]
+  boundingObject USE BALL_GEOMETRY
+  physics Physics {
+  }
+}
+Solid {
+  translation -0.2 -0.1 0.2
+  children [
+    USE OBJ_SHAPE
+  ]
+  name "solid(1)"
+  boundingObject USE BALL_GEOMETRY
+  physics Physics {
+  }
+}
+DEF WALL Solid {
+  translation 0 -0.55 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "wall_obj"
+}

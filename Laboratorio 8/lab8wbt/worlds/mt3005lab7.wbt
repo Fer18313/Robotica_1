@@ -1,0 +1,44 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/universal_robots/protos/UR5e.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/devices/robotiq/protos/Robotiq3fGripper.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/drinks/protos/Can.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/PlasticCrate.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.18884293694529936 -0.06565519233852553 0.9798100534720314 3.79824228315334
+  position 3.1075632785428935 2.8014677495384905 1.7087123709080063
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  rotation 0 1 0 0
+  floorSize 4 4
+}
+UR5e {
+  controller "ur5trajctrl"
+  toolSlot [
+    Robotiq3fGripper {
+    }
+  ]
+}
+Table {
+  translation -0.75 0 0
+  size 1 2 0.2
+}
+Can {
+  translation -0.7 -0.5 0.26
+  rotation 0 1 0 0
+}
+PlasticCrate {
+  translation -0.5 0.75 0.2
+  size 0.3 0.3 0.3
+}
